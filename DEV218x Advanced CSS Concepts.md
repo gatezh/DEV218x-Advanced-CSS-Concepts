@@ -284,3 +284,10 @@ With this
 ```
 
 To get a layout that will work fine by default on mobile devices and will switch to another layout when a screen size is more than media query size set in a previous step.
+
+### Self-Assessment Lab: Build a Fluid Layout from a Wireframe
+
+#### Lab Instructions
+
+You will need two rows in the footer, <u>also there is an empty column so use `min-height: 1px` to make sure it does not collapse horizontally.</u> You will also have to add classes .col-1-4 and .col-1-6.
+
