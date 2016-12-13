@@ -291,3 +291,58 @@ To get a layout that will work fine by default on mobile devices and will switch
 
 You will need two rows in the footer, <u>also there is an empty column so use `min-height: 1px` to make sure it does not collapse horizontally.</u> You will also have to add classes .col-1-4 and .col-1-6.
 
+
+## Module 2 - CSS Modules and High Fidelity Designs
+
+
+### Resource Content: Building the Base and CSS Modules
+
+#### Layout and Advanced Positioning for Modules
+
+Knowing how to identify and break up modules can be difficult and will take practice. As a rule of thumb, it’s always helpful to separate layout and positioning from the module.
+
+#### Abstracting Layout
+
+For example we might have a design that shows a logo in the header and in the footer. The logo in the header is on the the left side of the screen and the footer logo on the right. In our first attempt to create a logo module in our css we might do something like this:
+
+```css
+.logo {
+
+   display:inline-block;
+   
+   font-family: georgia;
+   
+   float: left;
+   
+}
+```
+
+However, by always floating the logo to the left we introduced a rule that the logo in the footer would have to override. So it makes sense to pull the layout rule from the module and create some layout modules instead:
+
+```css
+.pull-left {
+
+   float:left;
+
+}
+
+.pull-right {
+
+   float:right;
+
+}
+```
+
+Now the HTML for the header becomes:
+
+```html
+<header>
+
+   <div class=“pull-left”>
+
+      <div class=“logo”>Logo</div>
+
+   </div>
+
+</header>
+```
