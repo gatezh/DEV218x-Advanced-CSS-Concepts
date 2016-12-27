@@ -5,17 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>title</title>
     <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
   </head>
   <body>
-    <header>
+    <header class="header-primary">
       <div class="container">
-        Header Content
+        <a class="logo logo-primary">
+          <img src="images/logo.png">
+        </a>
+        <nav class="nav nav-primary">
+          <ul>
+            <li><a href="#" class="btn btn-nav">Link</a></li>
+            <li><a href="#" class="btn btn-nav">Link</a></li>
+            <li><a href="#" class="btn btn-nav">Link</a></li>
+            <li><a href="#" class="btn btn-primary">Link</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
     <main>
-      <section>
+      <section class="hero hero-primary bg-image">
+        <img src="images/hero.jpg">
         <div class="container">
-          Hero Primary Content
+          <div class="hero-body">
+            <h1 class="hero-title">Hero Primary Title Content</h1>
+            <h4 class="hero-subtitle">Hero Primary Subtitle Content</h4>
+            <button class="btn">Button Text</button>
+          </div>
         </div>
       </section>
       <section>
@@ -56,9 +72,23 @@
           Testimonial Content
         </div>
       </section>
-      <section>
+      <section class="background-quinary">
         <div class="container">
-          Media Objects
+            <div class="row">
+              <div class="col-1-2">
+                <div class="media">
+                  <div class="media-item">
+                    <i class="fa fa-tags"></i>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Media heading</h4>
+                    <p>Detail content for the media object.</p>
+                    <button class="btn btn-primary">Click Me</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-1-2">Media Object</div>
+            </div>
         </div>
       </section>
     </main>

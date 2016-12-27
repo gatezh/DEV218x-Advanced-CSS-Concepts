@@ -74,6 +74,10 @@ Layout Styles
   .col-1-3 {
     width: 33.3333%;
   }
+  /* Column Half */
+  .col-1-2 {
+    width: 50%;
+  }
 }
 
 @media (min-width: 48em) {
@@ -95,6 +99,143 @@ Modules
 ****************************
 ***************************/
 
+/*Button Modules*/
+.btn {
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-image: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+
+  padding: 12px 30px;
+  font-size: 1.313em;
+  font-weight: bold;
+  border-radius: 4px;
+
+  transition: all 0.3s ease 0s;
+}
+
+.btn-primary {
+  background: #8DC63F;
+  border-color: #8DC63F;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: none;
+  border-color: white;
+  text-decoration: none;
+}
+
+.btn-nav {
+  color: white;
+}
+
+/*Header Modules*/
+.header-primary {
+  background: #9B8579;
+  text-align: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/*Logo Modules*/
+.logo {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.logo-primary {
+  width: 64px;
+  height: 64px;
+}
+
+.logo-primary img {
+  height: 100%;
+}
+
+/*Navigation Modules*/
+.nav > ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.nav-primary {
+  margin-top: 35px;
+}
+
+/*Hero Modules*/
+.hero {
+  text-align: center;
+}
+
+.hero-primary {
+  background-color: #594a42;
+  color: white;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.hero-primary.bg-image > img {
+  opacity: 0.55;
+}
+
+.hero-body {
+  position: relative;
+}
+
+.hero-title {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 2.625em;
+}
+.hero-subtitle {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 1.500em;
+  font-weight: normal;
+}
+
+.hero-subtitle + button {
+  margin-top: 25px;
+}
+
+/*Background Modules*/
+.bg-image  {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.bg-image > img {
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  min-width: 100%;
+}
+
+/*Media Object Module*/
+.media, .media-body {
+  overflow:hidden;
+}
+
+.media-item {
+  float:left;
+  margin-right: 10px;
+}
+
+.media-item i {
+  color: #594a42;
+  font-size: 5em;
+}
+
 
 /***************************
 ****************************
@@ -104,12 +245,19 @@ Theme Styles
 .background-primary {
   background: #F7941E;
 }
+
 .background-secondary {
   background: #00AEEF;
 }
+
 .background-tertiary {
   background: #8DC63F;
 }
+
 .background-quaternary {
   background: #594a42;
+}
+
+.background-quinary {
+    background: #e7e1d7;
 }

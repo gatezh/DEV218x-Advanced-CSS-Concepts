@@ -346,3 +346,54 @@ Now the HTML for the header becomes:
 
 </header>
 ```
+
+
+### Tutorial Lab: Build the Base Button Module
+
+#### To Build the Base Button CSS Module
+
+Underneath the `/*Modules*/` comment, add another comment for the button module, add the following code:
+
+```css
+/*Button Modules*/
+.btn {
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	background-image: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	text-decoration: none;
+}
+```
+
+The above rules help the button take on some simple button characteristics at the most basic level.
+
+Still working inside the button style, to specify some more base style attributes from your style guide, add the following code:
+
+```css
+padding: 12px 30px;
+font-size: 1.313em;
+font-weight: bold;
+border-radius: 4px;
+```
+
+> Note: Go to [http://pxtoem.com](http://pxtoem.com) to convert your font sizes from the style guide into web friendly units.
+
+
+#### To Include a Fade Transition for Button Hover State
+
+To add a fade affect to the `.btn` module, add the following code:
+
+```css
+transition: all 0.3s ease 0s;
+```
+
+> Note: Go to [http://www.w3schools.com/css/css3_transitions.asp](http://www.w3schools.com/css/css3_transitions.asp) to learn more about CSS Transitions and browser support.
+
+
+
+**STOPED HERE** https://courses.edx.org/courses/course-v1:Microsoft+DEV218x+3T2016/courseware/b306527c008944bdb62ff0ea5914e1ab/50e7d5a138144b07812bb50e5acd392a/?child=first
+
+To Create Hero and Hero Primary Modules
