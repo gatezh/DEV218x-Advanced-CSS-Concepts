@@ -130,8 +130,29 @@ Modules
   text-decoration: none;
 }
 
+@media (min-width: 48em) {
+  .btn-primary {
+    padding: 10px 15px;
+    font-size: 1.125em;
+  }
+}
+
 .btn-nav {
   color: white;
+}
+
+.btn-hero {
+  padding: 15px 30px;
+  font-size: 1.750em;
+  background: none;
+  border-color: white;
+  color: white;
+}
+
+.btn-hero:hover {
+  border-color: white;
+  background: white;
+  color: #39B54A;
 }
 
 /*Header Modules*/
@@ -184,6 +205,10 @@ Modules
   opacity: 0.55;
 }
 
+.hero-secondary {
+  background-color: #999;
+}
+
 .hero-body {
   position: relative;
 }
@@ -193,6 +218,7 @@ Modules
   margin-bottom: 25px;
   font-size: 2.625em;
 }
+
 .hero-subtitle {
   margin-top: 25px;
   margin-bottom: 25px;
@@ -202,6 +228,16 @@ Modules
 
 .hero-subtitle + button {
   margin-top: 25px;
+}
+
+.hero-text {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.hero-text strong {
+  font-weight: bold;
+  font-style: normal
 }
 
 /*Background Modules*/

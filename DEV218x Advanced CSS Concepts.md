@@ -394,6 +394,6 @@ transition: all 0.3s ease 0s;
 
 
 
-**STOPED HERE** https://courses.edx.org/courses/course-v1:Microsoft+DEV218x+3T2016/courseware/b306527c008944bdb62ff0ea5914e1ab/50e7d5a138144b07812bb50e5acd392a/?child=first
+**STOPED HERE** https://courses.edx.org/courses/course-v1:Microsoft+DEV218x+3T2016/courseware/b306527c008944bdb62ff0ea5914e1ab/a86669d84f83423c979ed33bffef5f70/?child=first
 
-To Create Hero and Hero Primary Modules
+Self-Assessment Lab: Enhancing Your CSS Modules
