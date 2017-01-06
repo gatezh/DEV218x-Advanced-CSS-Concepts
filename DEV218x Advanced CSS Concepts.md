@@ -394,6 +394,218 @@ transition: all 0.3s ease 0s;
 
 
 
-**STOPED HERE** https://courses.edx.org/courses/course-v1:Microsoft+DEV218x+3T2016/courseware/b306527c008944bdb62ff0ea5914e1ab/a86669d84f83423c979ed33bffef5f70/?child=first
+## Module 3 - Sass/Less and Preprocessing
 
-Self-Assessment Lab: Enhancing Your CSS Modules
+###  Resource Content: CSS Preprocessing Tools
+
+#### Sass/SCSS and Less
+
+Sass uses CSS-compatible, indented syntax to provide customized, well-formatted output. It uses indentation rather than brackets to indicate nesting of selectors, and new lines rather than semicolons to separate properties.
+
+```sass
+//Sass Example
+$text-color: #333333
+body
+     color: $text-color
+```
+
+SCSS followed the development of Sass; SCSS offers a more flexible syntax, including the ability to write basic CSS. SCSS is an extension of the CSS syntax; therefore, every valid CSS stylesheet is a valid SCSS file with the same meaning. Files using this syntax have the `.SCSS` extension.
+
+```scss
+//SCSS Example
+$text-color: #333333;
+body {
+     color: $text-color;
+}
+```
+
+
+##### Install Sass
+
+```bash
+gem install sass       # install Sass
+```
+The idea is that you have Sass installed on you computer globally, so now you can type Sass commands into your command-line.
+
+
+##### Basic Sass Commands
+
+```bash
+sass -v                     # check Sass version
+sass input.scss output.css  # compile a .scss file into a .css
+
+# watch a .scss file for changes then create the .css file
+sass --watch input.scss:output.css
+
+sass-convert style.sass style.scss   # convert Sass to SCSS
+sass-convert style.scss style.sass   # convert SCSS to Sass
+```
+
+##### Some Basic Syntax Differences from Sass
+
+Remember that both Sass and Less can utilize variables to seclude values. Less uses the `@` symbol while Sass uses the `$` dollar sign to declare a variable, as seen in the following.
+
+```less
+//Less Variable
+@link-color: blue;
+```
+```scss
+//SCSS Variable
+$link-color: blue;
+```
+
+`Mixins` also have a small syntax differences between Less and Sass.
+
+```less
+//Less mixin for rounding borders
+.round-borders (@radius) {
+   border-radius: @radius;
+}
+
+//Add the round-borders mixin with Less
+.box { round-borders(0.5rem); }
+```
+
+The same round-border `mixin` in Sass looks as follows:
+
+```sass
+//Sass mixin for rounding corners
+@mixin round-borders (@radius) {
+   border-radius: $radius;
+}
+
+//Add the round-borders mixin with Sass
+.box { @include round-borders(0.5rem); }
+```
+
+##### Using Less
+
+The most efficient way to install Less is on the server, via the `node.js` package manager (`npm`), like so:
+
+```bash
+$ npm install -g Less
+```
+
+
+#### Getting Started with Sass/SCSS
+
+```bash
+sudo gem install sass            # install Sass
+sass -v                          # check Sass version installed
+
+# install nodejs first https://nodejs.org/en/download/
+npm install node-sass            # install Node-Sass
+
+node-sass input.scss output.css  # run node-sass
+```
+
+For more information about the usage of `Node-Sass`, go to [https://github.com/sass/node-sass](https://github.com/sass/node-sass).
+
+
+##### File and Folder Structure
+
+The directory where your Sass/SCSS files live is called the input folder. Your processed CSS files are saved to the output folder. These folders can be set up however you like, even nested inside one another. A typical pattern is for the input folder to reside with your site’s regular style sheets folder, like so:
+
+```
+  my_project/
+    index.html
+    css/
+      main_style.css
+    scss/
+      main_style.scss 
+      _mixins.scss
+      _colors.scss
+```
+
+
+#### Sass Features In-Depth
+
+##### Ampersand
+
+One of the basic features of Sass is the ampersand (&). When you prepend an ampersand to a parameter in a nested Sass selector, that selector becomes attached to the parent selector, instead of being nested below it. This is immediately useful for pseudo class selectors such as :hover or :after that need to be associated with a selector.
+
+The following SCSS
+
+```scss
+.parent {
+    &:before {...}
+}
+```
+is the same as the following CSS.
+
+```css
+.parent:before {...}
+```
+
+
+##### Combinatorial Explosion
+
+You can apply combinatorial explosion to many combinations of selectors. Use it to add space between elements that are direct siblings (the + selector) and direct descendants (the > selector).
+
+>Example: This code sample adds a top margin to any paragraph that is a direct sibling of another paragraph.
+
+The following SCSS
+
+```scss
+p {
+    + p {
+        margin-top:16px;
+    }
+}
+```
+is the same as the following CSS.
+
+```css
+p + p {
+    margin-top:16px;
+}
+```
+
+
+##### Extend/Inheritance
+
+Use the extend command, `@extend`, to share a set of CSS properties from one selector to another. This helps you avoid writing multiple class names on HTML elements, and allows for semantic names in your CSS instead. In the following example we will extend our primary container to make a new container:
+
+```scss
+//Container Rules
+.container {
+   max-width: 1024px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+//Container 2 Rules
+.container-2 {
+   @extend .container;
+   padding: 0 45px;
+}
+```
+
+##### Import
+
+The CSS import option allows you to divide your CSS into smaller, more maintainable portions. Although each time you use `@import` in CSS, *it creates another HTTP request*. Sass builds on top of the current CSS `@import`. Instead of requiring an HTTP request, Sass takes the file that you want to import, and combines it with the file you're importing into. This combine function then serves a single CSS file to the web browser.
+
+
+##### Mixin
+
+You define a mixin as a CSS rule set. Mixins allow you to define common properties once, and then reuse them throughout the rest of your CSS. Specifically, mixins are a set of definitions that compiles according to parameters or static rules that you set. You can even pass in values to make your mixin more flexible. For example, you can use mixins to write cross-browser background gradients, CSS arrows, or vendor prefixes. To create a mixin, you use the `@mixin` directive and give it a name. To create a clearfix mixin that you can add to selectors that contain floated modules, use the following example:
+
+```scss
+//Clearfix Mixin
+@mixin clearfix() { 
+   &:before,
+   &:after {
+      content: "";
+      display: table;
+   }
+   &:after {
+      clear: both;
+   }
+}
+
+//Add Clearfix to row
+.row {
+   @include clearfix();
+}
+```
+
