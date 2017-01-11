@@ -1,4 +1,5 @@
 @import "base/normalize";
+@import "base/variables"; // variables will be used in files imported below
 @import "base/base";
 @import "base/media-queries";
 @import "layouts/layout";
