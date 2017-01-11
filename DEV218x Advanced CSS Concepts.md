@@ -609,3 +609,123 @@ You define a mixin as a CSS rule set. Mixins allow you to define common properti
 }
 ```
 
+
+### Tutorial Lab: Getting Started Transpiling SCSS into CSS
+
+#### To Install a Node.js Version of Sass called Node-Sass
+
+1. Download and install [Node.js](https://nodejs.org/en/download/)
+2. To install Node-Sass globally
+
+```bash
+sudo npm install -g node-sass
+```
+
+
+#### To Set Up a Task Runner with Visual Studio Code to Transpile your SCSS into CSS
+
+1. In Visual Studio Code, under the **View** menu, click **Command Palette**.
+2. In the **Command Palette** pane, to set up a task runner, type **Configure Task Runner** and then **Other**. 
+3. Replace code
+
+	```json
+	///////////////////
+	// ORIGINAL CODE //
+	///////////////////
+	{
+	    // See https://go.microsoft.com/fwlink/?LinkId=733558
+	    // for the documentation about the tasks.json format
+	    "version": "0.1.0",
+	    "command": "echo",
+	    "isShellCommand": true,
+	    "args": ["Hello World"],
+	    "showOutput": "always"
+	}
+	
+	///////////////////////
+	// REPLACE WITH THIS //
+	///////////////////////
+	{
+	    "version": "0.1.0",
+	    "command": "node-Sass",
+	    "isShellCommand": true,
+	    "args": ["scss/styles.scss", "css/styles.css"]
+	}
+	```
+
+4. To run the task that you just created, press `SHIFT + CONTROL + B`
+
+
+#### To Create Separate SCSS Files from stylesheet.css
+
+Create file **styles.scss** in **scss** folder and import all the parts into it.
+
+```scss
+@import "base/normalize";
+@import "base/base";
+@import "base/media-queries";   
+@import "layouts/layout";
+@import "modules/bg-image";
+@import "modules/buttons";
+@import "modules/header";
+@import "modules/hero";
+@import "modules/logo";
+@import "modules/media";
+@import "modules/nav";
+@import "themes/theme";
+```
+> **Warning!** Make sure that files with `mixins` defined are imported before files that use those mixins
+
+To combine all the files into **css** file press `SHIFT + CONTROL + B`.
+
+
+### Tutorial Lab: Build Desktop Header Section with Variables and Media Query Mixins
+
+#### To Create a Breakpoint Variable and Media Query Mixins
+
+In the base folder, open media-queries.scss, and then, to create a media-query variable, enter the following code:
+
+```scss
+$mq-1: 48em !default; /* 768px / 16px = 48em */
+```
+
+> Note: Using !default defines the variable with that value unless it has already been assigned. Go to [https://robots.thoughtbot.com/sass-default](https://robots.thoughtbot.com/sass-default) to learn more. 
+
+In media-queries.scss, to create a mixin that will apply only to extra small devices, enter the following code:
+
+```scss
+@mixin extra-small-only {
+    @media only screen and (max-width : $mq-1 - 0.0625) {
+        @content;
+    }
+}
+```
+
+> Note: By subtracting 0.0625 from your mq-1 variable, you are basically removing a pixel. You remove the pixel so that the next media query mixin will not overlap.
+
+Below the mixin that you just created, to add a new mixin for devices small and above, enter the following code:
+
+```scss
+@mixin small-and-above {
+    @media only screen and (min-width : $mq-1) {
+        @content;
+    }
+}
+```
+
+#### To Style the Logo Module for Devices Small and Above
+
+Open **logo.scss** in **scss / modules** folder.  
+Update `logo-primary` part so it looks like this
+
+```scss
+.logo-primary {
+  width: 64px;
+  height: 64px;
+  @include small-and-above {  // using mixins defined in layouts
+    width: auto;
+    height: 50px;
+    float: left;
+  }
+}
+```
