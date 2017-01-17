@@ -1,0 +1,11 @@
+.frame {
+    overflow: hidden;
+}
+
+.frame-primary {
+    @include circle(200px);
+    margin: 25px auto 40px auto;
+    img {
+        width: 100%;
+    }
+}

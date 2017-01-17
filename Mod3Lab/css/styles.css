@@ -605,6 +605,17 @@ Nav Modules
       .nav-primary li {
         display: inline-block; } }
 
+.frame {
+  overflow: hidden; }
+
+.frame-primary {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  margin: 25px auto 40px auto; }
+  .frame-primary img {
+    width: 100%; }
+
 /***************************
 ****************************
 Theme Styles
