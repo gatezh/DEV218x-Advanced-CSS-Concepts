@@ -615,6 +615,14 @@ Nav Modules
   margin: 25px auto 40px auto; }
   .frame-primary img {
     width: 100%; }
+  @media only screen and (min-width: 48em) {
+    .frame-primary {
+      width: 355px;
+      height: 355px;
+      border-radius: 177.5px;
+      position: relative;
+      top: -30px;
+      margin: 0 auto 63px auto; } }
 
 /***************************
 ****************************

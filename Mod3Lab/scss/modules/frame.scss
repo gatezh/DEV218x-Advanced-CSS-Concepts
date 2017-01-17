@@ -8,4 +8,11 @@
     img {
         width: 100%;
     }
+    @include small-and-above {
+        @include circle(355px);
+        position: relative;
+        top: -30px;
+        margin: 0 auto 63px auto;
+    }
 }
+
