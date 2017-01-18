@@ -413,13 +413,12 @@ Layout Styles
 /* Row */
 .row {
   margin-right: -15px;
-  margin-left: -15px; }
-
-/* Row Clear Float*/
-.row:after {
-  content: "";
-  display: table;
-  clear: both; }
+  margin-left: -15px;
+  /* Row Clear Float*/ }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 /* Media Query excludes extra small devices and includes small and above */
 [class*='col-'] {
@@ -427,7 +426,7 @@ Layout Styles
   padding-left: 15px;
   padding-right: 15px; }
 
-@media (min-width: 48em) {
+@media only screen and (min-width: 48em) {
   [class*='col-'] {
     float: left; }
   /* Column Two Thirds */
@@ -440,7 +439,7 @@ Layout Styles
   .col-1-2 {
     width: 50%; } }
 
-@media (min-width: 48em) {
+@media only screen and (min-width: 48em) {
   .pull-right-sm {
     float: right; } }
 

@@ -15,12 +15,12 @@ Layout Styles
 .row {
   margin-right: -15px;
   margin-left: -15px;
-}
-/* Row Clear Float*/
-.row:after {
+  /* Row Clear Float*/
+  &:after {
   content: "";
   display: table;
   clear: both;
+  }
 }
 /* Media Query excludes extra small devices and includes small and above */
 [class*='col-'] {
@@ -29,7 +29,7 @@ Layout Styles
   padding-right: 15px;
 }
 
-@media (min-width: 48em) {
+@include small-and-above {
   [class*='col-'] {
     float: left;
   }
@@ -47,17 +47,15 @@ Layout Styles
   }
 }
 
-@media (min-width: 48em) {
+@include small-and-above {
   .pull-right-sm {
     float:right;
   }
 }
 
-@media only screen and (max-width : 47.9375em) {
+@include extra-small-only {
   .remove-gutter-xs {
     padding-left: 0px;
     padding-right: 0px;
   }
 }
-
-
