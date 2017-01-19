@@ -729,3 +729,28 @@ Update `logo-primary` part so it looks like this
   }
 }
 ```
+
+
+## Module 4 - Web App Testing and Support for Browsers and Devices
+
+### Resource Content: Tools for Testing and Supporting Web Apps
+
+#### Using Modernizr
+
+Modernizr employs feature detection to ensure your website’s compatibility on various browsers. Feature detection is a series of tests, or detects, that programmatically check your website’s features and runs as your web page loads. Modernizr returns the results of the browser’s actual capabilities. You then use that information to tailor your website to a user’s experience. You can find Modernizr at [https://modernizr.com](https://modernizr.com).
+
+Include ModernizerJS in your HTML by adding the following code inside your <head> element:
+
+```html
+<head>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+```
+
+Once this is in place use your web development tools to look at the source of the HTML, you will notice that Modernizer has added class names to your <html> element; as in the following:
+
+```html
+<html class=“js no-flexbox canvas canvastext no-webgl no-touch geolocation postmessage no-websqldatabase no-indexeddb hashchange no-history draganddrop”>
+```
+
+This allows you to detect information about a browser's support for a CSS property, allowing you to deliver content for specific device and bowser environments.
