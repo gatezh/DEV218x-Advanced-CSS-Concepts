@@ -79,4 +79,9 @@ Layout Styles
   [class*='col-'] {
     float: none;
   }
+  .flexbox-sm-row-reverse {
+    -webkit-flex-direction: row-reverse; /* Safari 6.1+ */
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
 }
