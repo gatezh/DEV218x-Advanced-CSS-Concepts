@@ -458,6 +458,37 @@ Layout Styles
     padding-left: 0px;
     padding-right: 0px; } }
 
+/* Flexbox Layout*/
+@media only screen and (min-width: 48em) {
+  .flexbox-sm {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    /* Column Third */
+    /* Column Half */ }
+    .flexbox-sm .col-2-3 {
+      -webkit-box-flex: 0 1 66.6666%;
+      -moz-box-flex: 0 1 66.6666%;
+      -webkit-flex: 0 1 66.6666%;
+      -ms-flex: 0 1 66.6666%;
+      flex: 0 1 66.6666%; }
+    .flexbox-sm .col-1-3 {
+      -webkit-box-flex: 0 1 33.3333%;
+      -moz-box-flex: 0 1 33.3333%;
+      -webkit-flex: 0 1 33.3333%;
+      -ms-flex: 0 1 33.3333%;
+      flex: 0 1 33.3333%; }
+    .flexbox-sm .col-1-2 {
+      -webkit-box-flex: 0 1 50%;
+      -moz-box-flex: 0 1 50%;
+      -webkit-flex: 0 1 50%;
+      -ms-flex: 0 1 50%;
+      flex: 0 1 50%; }
+  [class*='col-'] {
+    float: none; } }
+
 /***************************
 Module Imports
 ***************************/
