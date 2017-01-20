@@ -9,9 +9,6 @@ Nav Modules
 .nav-primary {
   margin-top: 28px;
   @include small-and-above {
-    float: right;
-    width: 60%;
-    text-align: right;
     margin-top: 0px;
     li {
       display: inline-block;

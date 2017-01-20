@@ -16,5 +16,8 @@ Header
       display: table;
       clear: both;
     }
+    .container {
+      @include flexbox-display();
+    }
   }
 }
